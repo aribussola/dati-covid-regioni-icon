@@ -1,0 +1,1 @@
+# dati-covid-regioni-icon
