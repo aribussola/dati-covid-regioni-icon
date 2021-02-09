@@ -5,6 +5,7 @@ from sklearn import tree
 import pandas as pd #Manipolazione e analisi dei dati
  
 lista = []
+
 #Creazione regioni
 ValleAosta = Regione("ValleAosta")
 lista.append(ValleAosta)
@@ -46,10 +47,12 @@ lista.append(Calabria)
 def generateGraph () :
     # Create a graph
     graph = Graph()
-    
+    colorAssignment()
     # Create graph connections (Actual distance)
-    graph.connect(ValleAosta.name,Piemonte.name, realCost(ValleAosta.rt,Piemonte.rt))
-    graph.connect(Piemonte.name,Lombardia.name, realCost(Piemonte.rt,Lombardia.rt))
+    if(ValleAosta.color!='red' and Piemonte!='red'):
+        graph.connect(ValleAosta.name,Piemonte.name, realCost(ValleAosta.rt,Piemonte.rt))
+    if(Piemonte.color!='red' and Lombardia!='red'):
+        graph.connect(Piemonte.name,Lombardia.name, realCost(Piemonte.rt,Lombardia.rt))
     graph.connect(Liguria.name, EmiliaRomagna.name, realCost(Liguria.rt,EmiliaRomagna.rt))
     graph.connect(Liguria.name, Toscana.name, realCost(Liguria.rt,Toscana.rt))
     graph.connect(Piemonte.name, Liguria.name, realCost(Piemonte.rt,Liguria.rt))
@@ -83,14 +86,18 @@ def generateGraph () :
     # Make graph undirected, create symmetric connections
     graph.make_undirected()
     return graph
-    
+def getRegione (nameRegione):
+    for i in range (len(lista)):
+        if (nameRegione==lista[i].name):
+            return lista[i]
+    return None
 def findPath (start, end):
     for i in range (len(lista)):
-        if (lista[i].name==start):
+        if lista[i].name==start:
             regioneStart = lista[i]
-        if (lista[i].name==end):
+        if lista[i].name==end:
             regioneEnd = lista[i]
-    
+            
     graph = generateGraph ()
     
     # Create heuristics (straight-line distance, air-travel distance)
@@ -105,6 +112,7 @@ def colorAssignment():
     linkDataset = "https://raw.githubusercontent.com/aribussola/dati-covid-regioni-icon/main/Italia-dataSet-COVID/TrainingSet(Colori).csv"
     data = pd.read_csv(linkDataset)
     regione = data['regione']
+    dateInfo = data['data']
     popolazione = data['popolazione']
     colore = data['colore']
     X = []
@@ -113,7 +121,7 @@ def colorAssignment():
     for i in range (len(popolazione)):
         for j in range (len(lista)):
             if (lista[j].name==regione[i]):
-                   rt=lista[j].avgRtByDate()
+                   rt=lista[j].avgRtByDate(dateInfo[j])
                    break
         print(regione[i])
         print(colore[i])
@@ -129,5 +137,10 @@ def colorAssignment():
                    rt=lista[j].rt
                    break
         print(regione[i])
-        print(clf.predict([[popolazione[i],rt]]))
+        print(rt)
+        color=clf.predict([[popolazione[i],rt]])
+        print(color)
+        for k in range (len(lista)):
+            if (regione[i]==lista[k].name):
+                lista[k].color=color
         
