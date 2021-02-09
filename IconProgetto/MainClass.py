@@ -49,10 +49,9 @@ def generateGraph () :
     graph = Graph()
     colorAssignment()
     # Create graph connections (Actual distance)
-    if(ValleAosta.color!='red' and Piemonte!='red'):
-        graph.connect(ValleAosta.name,Piemonte.name, realCost(ValleAosta.rt,Piemonte.rt))
-    if(Piemonte.color!='red' and Lombardia!='red'):
-        graph.connect(Piemonte.name,Lombardia.name, realCost(Piemonte.rt,Lombardia.rt))
+   
+    graph.connect(ValleAosta.name,Piemonte.name, realCost(ValleAosta.rt,Piemonte.rt))
+    graph.connect(Piemonte.name,Lombardia.name, realCost(Piemonte.rt,Lombardia.rt))
     graph.connect(Liguria.name, EmiliaRomagna.name, realCost(Liguria.rt,EmiliaRomagna.rt))
     graph.connect(Liguria.name, Toscana.name, realCost(Liguria.rt,Toscana.rt))
     graph.connect(Piemonte.name, Liguria.name, realCost(Piemonte.rt,Liguria.rt))
@@ -85,6 +84,18 @@ def generateGraph () :
     
     # Make graph undirected, create symmetric connections
     graph.make_undirected()
+    
+    regioni = lista
+    i = 0
+    while(i < (len(regioni))):
+        if(regioni[i].color == "red"):
+             graph.remove(regioni, regioni[i].name)        
+             regioni.pop(i)
+             i = i-1
+        i = i+1
+    
+        
+    
     return graph
 def getRegione (nameRegione):
     for i in range (len(lista)):
@@ -123,8 +134,6 @@ def colorAssignment():
             if (lista[j].name==regione[i]):
                    rt=lista[j].avgRtByDate(dateInfo[j])
                    break
-        print(regione[i])
-        print(colore[i])
         X.append([popolazione[i],rt])
         Y.append([colore[i]])
 
@@ -136,10 +145,7 @@ def colorAssignment():
             if (lista[j].name==regione[i]):
                    rt=lista[j].rt
                    break
-        print(regione[i])
-        print(rt)
         color=clf.predict([[popolazione[i],rt]])
-        print(color)
         for k in range (len(lista)):
             if (regione[i]==lista[k].name):
                 lista[k].color=color

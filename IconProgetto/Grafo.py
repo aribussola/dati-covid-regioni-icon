@@ -32,6 +32,11 @@ class Graph:
         s2 = set([k2 for v in self.graph_dict.values() for k2, v2 in v.items()])
         nodes = s1.union(s2)
         return list(nodes)
+    def remove(self, listaRegioni, nomeRegione):
+        for i in range (len(listaRegioni)):
+            if(self.graph_dict[listaRegioni[i].name].get(nomeRegione) != None):
+               self.graph_dict[listaRegioni[i].name].pop(nomeRegione) 
+        self.graph_dict.pop(nomeRegione)
 # This class represent a node
 class Node:
     # Initialize the class
