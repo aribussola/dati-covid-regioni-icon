@@ -164,9 +164,10 @@ class Regione:
 
         print(avgEPI)
         return avgEPI     
+
 # =============================================================================
-print("ValleAosta")
-ValleAosta = Regione("ValleAosta")
+# print("ValleAosta")
+# ValleAosta = Regione("ValleAosta")
 # print("Piemonte")
 # Piemonte = Regione("Piemonte")
 # print("Lombardia")
@@ -201,4 +202,8 @@ ValleAosta = Regione("ValleAosta")
 # Basilicata = Regione("Basilicata")
 # print("Calabria")
 # Calabria = Regione("Calabria")
+# print("Sicilia")
+# Sicilia = Regione("Sicilia")
+# print ("Sardegna")
+# Sardegna = Regione("Sardegna")
 # =============================================================================
