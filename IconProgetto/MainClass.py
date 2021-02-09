@@ -43,6 +43,10 @@ Basilicata = Regione("Basilicata")
 lista.append(Basilicata)
 Calabria = Regione("Calabria")
 lista.append(Calabria)
+Sardegna = Regione("Sardegna")
+lista.append(Sardegna)
+Sicilia = Regione("Sicilia")
+lista.append(Sicilia)
 
 def generateGraph () :
     # Create a graph
@@ -81,6 +85,9 @@ def generateGraph () :
     graph.connect(Campania.name, Basilicata.name, realCost(Campania.rt,Basilicata.rt))
     graph.connect(Puglia.name, Basilicata.name, realCost(Puglia.rt,Basilicata.rt))
     graph.connect(Basilicata.name, Calabria.name, realCost(Basilicata.rt,Calabria.rt))
+    graph.connect(Calabria.name, Sicilia.name, realCost(Calabria.rt,Sicilia.rt))
+    graph.connect(Sicilia.name, Sardegna.name, realCost(Sicilia.rt,Sardegna.rt))
+    
     
     # Make graph undirected, create symmetric connections
     graph.make_undirected()
