@@ -25,3 +25,6 @@ Infine, basandosi sui dati calcolati, una feature permette di ricercare il perco
 
 <h2 id="dati"> 2. Dati </h2>
 
+Il programma utilizza come data set i dati sulle regioni disponibili tramite delle tabelle presenti su un repository github. In particolare abbiamo una tabella per ogni regione in cui vengono indicati, suddivisi per giorni, i dati relativi ai casi totali per regione e numero di tamponi effettuati.
+Ad esempio la tabella della regione Puglia è così strutturata:
+
