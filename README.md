@@ -27,7 +27,7 @@ Infine, basandosi sui dati calcolati, una feature permette di ricercare il perco
 
 <h2 id="dati"> 2. Dati </h2>
 
-Il programma utilizza due differenti tipologie di data set disponibili tramite file .csv presenti su repository github:<br>
+Il programma utilizza due differenti tipologie di data set disponibili tramite file .csv presenti su repository github:<br><br>
 2.1) **Dati sulle regioni**. In particolare un documento .csv per ogni regione in cui vengono indicati, suddivisi per giorni, i dati relativi ai casi totali per regione e numero di tamponi effettuati.<br>
 Ad esempio la tabella della regione Puglia è così strutturata:<br><br>
 ![Help Example](/img/Immagine.png)<br><br>
