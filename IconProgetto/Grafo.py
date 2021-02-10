@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Regione import Regione
 
 # This class represent a graph
@@ -80,9 +79,9 @@ def astar_search(graph, heuristics, start:Regione, end:Regione):
         if current_node == goal_node:
             path = []
             while current_node != start_node:
-                path.append(current_node.name + ': ' + str(current_node.g))
+                path.append(current_node.name)
                 current_node = current_node.parent
-            path.append(start_node.name + ': ' + str(start_node.g))
+            path.append(start_node.name)
             # Return reversed path
             return path[::-1]
         # Get neighbours
@@ -115,11 +114,10 @@ def heuristic (start, goal):
     hValue = (start+goal)/2
     return hValue
 
-def heuristicsVector (regioneStart:Regione, lista):
-    #euristiche per la regione Puglia
+def heuristicsVector (regione:Regione, lista):
     heuristics = {}
     for i in range (len(lista)) :
-            heuristics[lista[i].name] = heuristic (regioneStart.rt, lista[i].rt)
+            heuristics[lista[i].name] = heuristic (regione.rt, lista[i].rt)
     return heuristics
 
 def realCost (start, goal):

@@ -1,4 +1,3 @@
-# The main entry point for this module
 from Grafo import Graph, realCost, heuristicsVector, astar_search
 from Regione import Regione
 from sklearn import tree
@@ -52,7 +51,7 @@ def generateGraph () :
     # Create a graph
     graph = Graph()
     colorAssignment()
-    # Create graph connections (Actual distance)
+    # Create graph connections
    
     graph.connect(ValleAosta.name,Piemonte.name, realCost(ValleAosta.rt,Piemonte.rt))
     graph.connect(Piemonte.name,Lombardia.name, realCost(Piemonte.rt,Lombardia.rt))
@@ -91,8 +90,7 @@ def generateGraph () :
     
     # Make graph undirected, create symmetric connections
     graph.make_undirected()
-    
-    regioni = lista
+    regioni = lista.copy()
     i = 0
     while(i < (len(regioni))):
         if(regioni[i].color == "red"):
@@ -100,29 +98,33 @@ def generateGraph () :
              regioni.pop(i)
              i = i-1
         i = i+1
-    
         
-    
     return graph
+
 def getRegione (nameRegione):
     for i in range (len(lista)):
         if (nameRegione==lista[i].name):
             return lista[i]
     return None
+
 def findPath (start, end):
+
+    regioneStart = None
+    regioneEnd = None
     for i in range (len(lista)):
-        if lista[i].name==start:
+        if lista[i].name.lower()==start.lower():
             regioneStart = lista[i]
-        if lista[i].name==end:
+        if lista[i].name.lower()==end.lower():
             regioneEnd = lista[i]
             
+    if(regioneStart == None or regioneEnd == None):
+        print("Hai sbagliato a scrivere il nome della regione")
+        return
     graph = generateGraph ()
     
-    # Create heuristics (straight-line distance, air-travel distance)
     #Euristiche per la regione 
     heuristics = heuristicsVector (regioneEnd, lista)
 
-    #path = astar_search(graph, heuristics, 'Emilia Romagna', 'Puglia')
     path = astar_search(graph, heuristics, regioneStart, regioneEnd)
     print(path)
   
@@ -156,4 +158,10 @@ def colorAssignment():
         for k in range (len(lista)):
             if (regione[i]==lista[k].name):
                 lista[k].color=color
-        
+
+def printColors():
+    colorAssignment()
+    for i in range(len(lista)):
+        print(lista[i].name,":" , lista[i].color)
+    
+    
