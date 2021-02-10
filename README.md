@@ -6,8 +6,6 @@
 ### <a href=#regioni>5. CLASSIFICAZIONE</a>
 ### <a href=#regioni>6. RICERCA PERCORSO</a>
 
-<br><br>
-
 <h2 id="intro"> 1. Introduzione </h2>
 Il programma affronta diverse problematiche legate alla pandemia SARS-CoV-2.
 
