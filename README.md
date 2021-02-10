@@ -1,6 +1,6 @@
 # INDICE
-### - <a href=#intro>1. INTRODUZIONE</a>
-### - <a href=#dati>2. DATI</a>
+### <a href=#intro>1. INTRODUZIONE</a>
+### <a href=#dati>2. DATI</a>
 
 <br/><br/><br/><br/>
 
