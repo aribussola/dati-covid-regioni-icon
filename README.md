@@ -2,6 +2,9 @@
 ### <a href=#intro>1. INTRODUZIONE</a>
 ### <a href=#dati>2. DATI</a>
 ### <a href=#regioni>3. REGIONI</a>
+### <a href=#regioni>4. PREVISIONE</a>
+### <a href=#regioni>5. CLASSIFICAZIONE</a>
+### <a href=#regioni>6. RICERCA PERCORSO</a>
 
 <br><br>
 
@@ -36,3 +39,9 @@ Questi dati verranno utilizzati dal programma al fine del calcolo dell’EPI.<br
 
 
 <h2 id="regioni"> 3. Regioni</h2>
+
+<h2 id="regioni"> 4. Predizione</h2>
+
+<h2 id="regioni"> 5. Classificazione</h2>
+
+<h2 id="regioni"> 6. Ricerca Percorso</h2>
