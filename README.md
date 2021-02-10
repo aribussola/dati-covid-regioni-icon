@@ -38,7 +38,7 @@ Questi dati verranno utilizzati dal programma al fine del calcolo dell’EPI.<br
 
 <h2 id="regioni"> 3. Regioni</h2>
 
-<h2 id="regioni"> 4. Predizione</h2>
+<h2 id="regioni"> 4. Previsione</h2>
 
 <h2 id="regioni"> 5. Classificazione</h2>
 
