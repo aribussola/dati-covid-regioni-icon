@@ -25,9 +25,10 @@ Infine, basandosi sui dati calcolati, una feature permette di ricercare il perco
 
 <h2 id="dati"> 2. Dati </h2>
 
-Il programma utilizza come data set i dati sulle regioni disponibili tramite delle tabelle presenti su un repository github. In particolare abbiamo una tabella per ogni regione in cui vengono indicati, suddivisi per giorni, i dati relativi ai casi totali per regione e numero di tamponi effettuati.<br>
+Il programma utilizza due differenti tipologie di data set disponibili tramite file .csv presenti su repository github:
+1) **Dati sulle regioni**. In particolare un documento .csv per ogni regione in cui vengono indicati, suddivisi per giorni, i dati relativi ai casi totali per regione e numero di tamponi effettuati.<br>
 Ad esempio la tabella della regione Puglia è così strutturata:<br><br>
 ![Help Example](/img/Immagine.png)<br><br>
 Questi dati verranno utilizzati dal programma al fine del calcolo dell’EPI.<br><br>
-Per il task della classificazione invece, viene utilizzata la tabella seguente, la quale contiene aggiornamenti settimanali sui colori assegnati alle regioni.<br><br>
+2) Per il task della classificazione invece, viene utilizzata la tabella seguente, la quale contiene **aggiornamenti settimanali sui colori (restrizioni)** assegnati alle regioni.<br><br>
 ![Help Example](/img/Immagine2.png)<br>
