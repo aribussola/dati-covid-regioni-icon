@@ -89,4 +89,23 @@ Il classificatore potrà essere mandato in esecuzione dall'utente mediante la fu
 ![Help Example](/img/printColors.PNG)<br><br>
 
 <h2 id="percorso"> 6. Ricerca Percorso</h2>
- 
+L’applicazione, a partire da tutte istanze dalla classe Regione, genera un **grafo** in cui i nodi saranno proprio gli oggetti della classe Regione, nonché proprio le regioni italiane, e gli archi collegheranno invece tutte quelle regioni che sono confinanti fra loro.<br><br>
+
+>Un grafo è un insieme di elementi detti nodi o vertici che possono essere collegati fra loro da linee chiamate archi o lati o spigoli. Più formalmente, si dice grafo una coppia ordinata G=(V,E) di insiemi, con V insieme dei nodi ed E insieme degli archi, tali che gli elementi di E siano coppie di elementi di V.
+
+Modellando in questo modo il dominio delle regioni italiane, e sfruttando le previsioni fatte sull’andamento del tasso di contagiosità per ciascuna di queste, l’applicazione rende possibile la ricerca di un percorso che va da una regione di partenza ad una di destinazione nel rispetto delle restrizioni.
+
+Le restrizioni in questione sono quelle previste dal programma per la settimana successiva a quella dei dati di training, come descritto nelle sezioni “Previsione” e “Classificazione”. Le restrizioni da rispettare saranno in particolare quelle relative alle regioni contrassegnate dal colore ‘red’, e quindi da un elevato tasso di contagiosità che ne vieterà l’attraversamento. Questo, implica che non sempre il calcolo del percorso da una regione ad un’altra potrà essere calcolato.
+
+La ricerca del percorso dovrà tener conto anche del rischio di contagio che si corre nell’attraversare una determinata sequenza di regioni. Pertanto, il grafo delle regioni sarà un grafo pesato in cui l’arco che collega due regioni avrà un peso pari alla media del tasso di contagiosità delle due regioni. In questo modo, si evita di scegliere percorsi che prevedano l’attraversamento di una regione con un tasso di contagiosità elevato.
+
+ Quindi, per implementare questa ricerca, si è scelto di utilizzare un algoritmo che preveda la ricerca a costo minimo, ma che inoltre tenga conto anche di conoscenza aggiuntiva.
+
+Questa conoscenza viene definita in un’apposita funzione di euristica che aiuta l’algoritmo di ricerca a stimare il costo di arrivo verso una determinata regione.
+
+In particolare, la funzione di euristica deve sottostimare il costo effettivo per raggiungere un nodo di destinazione del grafo a partire da un determinato nodo.
+
+Quindi, ad esempio, per calcolare il costo del percorso dalla regione Puglia alla regione Lazio, dovremo considerare il costo per raggiungere la regione Basilicata, più il valore della funzione euristica calcolato sulla regione Basilicata per la regione Lazio.
+
+In questo modo verranno scelte come prossimo step della ricerca, le regioni che avranno il minimo valore della somma tra costo effettivo e valore della funzione euristica.
+L’algoritmo di ricerca utilizzato per tenere in considerazione tutto ciò è **A* **.
