@@ -66,7 +66,7 @@ Il programma quindi, con l’ausilio del regressore lineare, calcola un ipotetic
 
 Inoltre, il programma calcola anche l’**errore massimo e minimo** commesso dal modello nella predizione, e anch’esso viene mostrato nel grafico insieme all’andamento della curva previsto.
 
-![Help Example](/img/EPI-prediction.png)
+/img/printColors.PNG
 
 I **grafici** con tutte queste informazioni vengono mostrate richiamando sull’oggetto Regione d’interesse, il metodo printGraphics.
 
@@ -83,6 +83,7 @@ Il numero di abitanti di ogni regione viene rilevato dalla tabella "TrainingSet(
 Allenandosi su questi dati, l'albero di decisione sarà in grado di assegnare alle regioni il colore corretto per la settimana oggetto della  previsione, basandosi sulle stesse feature di input "popolazione" ed "EPI" (predetto dalla funzione di previsione).
 
 Il classificatore potrà essere mandato in esecuzione dall'utente mediante la funzione "printColors()", la quale stamperà a video i colori assegnati ad ogni regione nel seguente modo: 
+![Help Example](/img/printColors.PNGg)
 
 <h2 id="percorso"> 6. Ricerca Percorso</h2>
  
