@@ -75,6 +75,9 @@ Il programma, raccogliendo dati sulle restrizioni associate ad ogni regione nell
 
 >Un albero di decisione è un albero di classificatori (Decision Stump) dove ogni nodo interno è associato ad una particolare “domanda” su una caratteristica (feature). Da questo nodo dipartono tanti archi quanti sono i possibili valori che la caratteristica può assumere, fino a raggiungere le foglie che indicano la categoria associata alla decisione.
 
+L'albero di decisione utilizzato dalla funzione di classificazione potrà essere stampato a video dall'utente richiamando la funzione "printTree()".<br><br>
+![Help Example](/img/decisionTree.png)
+
 In particolare utilizza come **training set** l'elenco delle regioni a cui sono associati:
 1. Come feature di **input**, di ogni regione, il **numero di abitanti** e l'**EPI medio** calcolato nella settimana d'interesse;<br>
 2. Come **target** il **colore** assegnato alla regione nella settimana d'interesse.<br>
@@ -84,8 +87,6 @@ Allenandosi su questi dati, l'albero di decisione sarà in grado di assegnare al
 
 Il classificatore potrà essere mandato in esecuzione dall'utente mediante la funzione "printColors()", la quale stamperà a video i colori assegnati ad ogni regione nel seguente modo: <br><br>
 ![Help Example](/img/printColors.PNG)<br><br>
-L'albero di decisione utilizzato dalla funzione di classificazione potrà essere stampato a video dall'utente richiamando la funzione "printTree()".<br><br>
-![Help Example](/img/decisionTree.png)
 
 <h2 id="percorso"> 6. Ricerca Percorso</h2>
  
