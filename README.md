@@ -37,6 +37,20 @@ Questi dati verranno utilizzati dal programma al fine del calcolo dell’EPI.<br
 
 
 <h2 id="regioni"> 3. Regioni</h2>
+Nel programma ogni regione è stata rappresentata mediante un'apposita classe (Regione.py), così definita:<br>
+<table>
+<tr><td>Attributiì</td></tr>
+<tr><td>name</td><td>Nome della regione</td></tr>
+<tr><td>epi</td><td>EPI medio calcolato per la settimana futura rispetto agli utimi dati registati nel dataset</td></tr>
+<tr><td>color</td><td>Colore ("white","yellow","orange","red") che indica il grado di criticità dei contagi</td></tr>
+</table>
+<table>
+<tr><td>Metodi</td></tr>
+<tr><td>avgEPIByDate (self, dataCalcolo)</td><td>Metodo per il calcolo dell'EPI medio, a partire da una settimana prima fino ad una data passata in input</td></tr>
+<tr><td>avgEPI (self)</td><td>Metodo per il calcolo dell'EPI medio calcolato per la settimana futura rispetto agli utimi dati registati nel dataset</td></tr>
+<tr><td>printGraphics(self)</td><td>Metodo per la visualizzazione dei grafici inenerenti l'andamento dei contagi registrati nelle ultime due settimane (prima della previsione) e la curva epidemiologica della previsione (con relativi margini di errore)</td></tr>
+</table>
+
 
 <h2 id="regioni"> 4. Previsione</h2>
 
