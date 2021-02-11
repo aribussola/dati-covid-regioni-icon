@@ -89,7 +89,7 @@ Il classificatore potrà essere mandato in esecuzione dall'utente mediante la fu
 ![Help Example](/img/printColors.PNG)<br><br>
 
 <h2 id="percorso"> 6. Ricerca Percorso</h2>
-L’applicazione, a partire da tutte istanze dalla classe Regione, genera un **grafo** in cui i nodi saranno proprio gli oggetti della classe Regione, nonché proprio le regioni italiane, e gli archi collegheranno invece tutte quelle regioni che sono confinanti fra loro.<br><br>
+L’applicazione, a partire da tutte istanze dalla classe Regione, genera un grafo in cui i nodi saranno proprio gli oggetti della classe Regione, nonché proprio le regioni italiane, e gli archi collegheranno invece tutte quelle regioni che sono confinanti fra loro.<br><br>
 
 >Un grafo è un insieme di elementi detti nodi o vertici che possono essere collegati fra loro da linee chiamate archi o lati o spigoli. Più formalmente, si dice grafo una coppia ordinata G=(V,E) di insiemi, con V insieme dei nodi ed E insieme degli archi, tali che gli elementi di E siano coppie di elementi di V.
 
@@ -108,4 +108,6 @@ In particolare, la funzione di euristica deve sottostimare il costo effettivo pe
 Quindi, ad esempio, per calcolare il costo del percorso dalla regione Puglia alla regione Lazio, dovremo considerare il costo per raggiungere la regione Basilicata, più il valore della funzione euristica calcolato sulla regione Basilicata per la regione Lazio.
 
 In questo modo verranno scelte come prossimo step della ricerca, le regioni che avranno il minimo valore della somma tra costo effettivo e valore della funzione euristica.
-L’algoritmo di ricerca utilizzato per tenere in considerazione tutto ciò è **A* **.
+L’algoritmo di ricerca utilizzato per tenere in considerazione tutto ciò è A*.
+
+>A* è un algoritmo di ricerca e ottimizzazione basato su grafi. Viene frequentemente impiegato nell’intelligenza artificiale perché in grado di gestire grafi ampi e indeterminati. In generale, A* può risolvere efficacemente i problemi che soddisfano i requisiti:<br> - La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi;<br> - Il nodo iniziale e il nodo finale devono essere noti;<br> - Deve essere noto un algoritmo euristico che stima il costo del percorso tra un nodo qualsiasi e la soluzione;<br> - Deve essere sempre noto il costo che separa due nodi adiacenti. (Nella maggioranza dei problemi tale valore è sempre unitario). <br> <br> A* rientra nella categoria degli algoritmi di ricerca best-first. Esso infatti esamina, passo dopo passo, i nodi che hanno il punteggio migliore. Esso tuttavia non è *greedy* in quanto il punteggio non è determinato esclusivamente dall’euristica.
