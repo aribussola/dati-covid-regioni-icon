@@ -111,3 +111,10 @@ In questo modo verranno scelte come prossimo step della ricerca, le regioni che 
 L’algoritmo di ricerca utilizzato per tenere in considerazione tutto ciò è A*.
 
 >A* è un algoritmo di ricerca e ottimizzazione basato su grafi. Viene frequentemente impiegato nell’intelligenza artificiale perché in grado di gestire grafi ampi e indeterminati. In generale, A* può risolvere efficacemente i problemi che soddisfano i requisiti:<br> - La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi;<br> - Il nodo iniziale e il nodo finale devono essere noti;<br> - Deve essere noto un algoritmo euristico che stima il costo del percorso tra un nodo qualsiasi e la soluzione;<br> - Deve essere sempre noto il costo che separa due nodi adiacenti. (Nella maggioranza dei problemi tale valore è sempre unitario). <br> <br> A* rientra nella categoria degli algoritmi di ricerca best-first. Esso infatti esamina, passo dopo passo, i nodi che hanno il punteggio migliore. Esso tuttavia non è *greedy* in quanto il punteggio non è determinato esclusivamente dall’euristica.
+
+L'utente può ricercare un percorso tra regioni mediante la funzione "findPath('NomeRegione1','NomeRegione2')", inserendo il nome delle regioni con le apposite diciture (ValleAosta, Piemonte, Lombardia, Liguria, EmiliaRomagna, Veneto, TrentinoAltoAdige, FriuliVeneziaGiulia, Toscana, Marche, Umbria, Lazio, Abruzzo, Campania, Molise, Puglia, Basilicata, Calabria, Sardegna, Sicilia).
+
+Se esiste un percorso tra due regioni, l'algoritmo restituirà il percorso meno rischioso per transitare dalla regione di partenza a quella di destinazione.<br><br>
+![Help Example](/img/findPathCorretto.PNG)<br><br>
+Altrimenti l'output sarà 'None'.<br><br>
+![Help Example](/img/findPathNone.PNG)
