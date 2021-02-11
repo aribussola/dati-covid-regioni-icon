@@ -133,17 +133,17 @@ def colorAssignment():
     data = pd.read_csv(linkDataset)
     regione = data['regione']
     dateInfo = data['data']
-    popolazione = data['popolazione']
+    popolazione = getPopolazioni()
     colore = data['colore']
     X = []
     Y = []
 
-    for i in range (len(popolazione)):
+    for i in range (len(regione)):
         for j in range (len(lista)):
             if (lista[j].name==regione[i]):
                    rt=lista[j].avgRtByDate(dateInfo[j])
                    break
-        X.append([popolazione[i],rt])
+        X.append([popolazione.get(regione[i]),rt])
         Y.append([colore[i]])
 
     clf = tree.DecisionTreeClassifier()
@@ -154,10 +154,20 @@ def colorAssignment():
             if (lista[j].name==regione[i]):
                    rt=lista[j].rt
                    break
-        color=clf.predict([[popolazione[i],rt]])
+        color=clf.predict([[popolazione.get(regione[i]),rt]])
         for k in range (len(lista)):
             if (regione[i]==lista[k].name):
                 lista[k].color=color
+                
+def getPopolazioni():
+    linkDatasetPopolazione = "https://raw.githubusercontent.com/aribussola/dati-covid-regioni-icon/main/Italia-dataSet-COVID/TrainingSet(Popolazione).csv"
+    dataPopolazione = pd.read_csv(linkDatasetPopolazione)
+    popolazioni = dataPopolazione['popolazione']
+    regioni = dataPopolazione['regione']
+    elencoPop = {}
+    for i in range(len(regioni)):
+        elencoPop.update({regioni[i]:popolazioni[i]})
+    return elencoPop
 
 def printColors():
     colorAssignment()
