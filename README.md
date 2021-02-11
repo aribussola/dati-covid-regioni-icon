@@ -57,6 +57,10 @@ Nel programma ogni regione è stata rappresentata mediante un'apposita classe (R
 L’applicazione, mediante l’accesso ad un data set, permette di effettuare delle predizioni sull’andamento del tasso di contagiosità (EPI) nella settimana seguente rispetto a quella dei dati di training.
 
 In particolare, la previsione viene effettuata per ogni singola regione, mediante l’apposito metodo avgEPI della classe Regione. Per effettuare la previsione, il programma si basa sull’utilizzo di un **regressore linare** che opera con le informazioni relative agli ultimi 14 giorni presenti nel dataset mostrato precedentemente nella sezione Dati.
+> La **regressione lineare** è una tecnica di modellazione statistica utilizzata per descrivere una varabile di risposta continua in funzione di una o più variabili (predittori). Può contribuire a comprendere e a prevedere il comportamento di sistemi complessi, nonché ad analizzare dati.
+Le regressioni lineari hanno delle proprietà che le rendono particolarmente utili per le seguenti applicazioni:
+><br>a) **Predizioni o previsioni** – Usa un modello di regressione per creare un modello di previsione per un set di dati specifico. Dal modello, è possibile usare la regressione per prevedere i valori di risposta quando sono noti solo i predittori.
+><br>b) **Forza della regressione** – Usa un modello di regressione per determinare se esiste una relazione tra una variabile e un predittore e quanto è forte quella relazione.
 
 ![Help Example](/img/EPI-all.png)
 
