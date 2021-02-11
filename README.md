@@ -64,7 +64,7 @@ Le regressioni lineari hanno delle proprietà che le rendono particolarmente uti
 
 Il programma quindi, con l’ausilio del regressore lineare, calcola un ipotetico andamento della curva epidemiologica, che viene mostrato e visualizzato all’interno di grafici generati dal programma, affinchè si possa fornire una rappresentazione più intuitiva ai tassi di contagiosità calcolati per la settimana successiva.
 
-Inoltre, il programma calcola anche l’**errore massimo e minimo** commesso dal modello nella predizione, e anch’esso viene mostrato nel grafico insieme all’andamento della curva previsto.
+Inoltre, il programma calcola anche l’**errore massimo e minimo** commesso dal modello nella predizione, e anch’esso viene mostrato nel grafico insieme all’andamento della curva previsto.<br>
 ![Help Example](/img/EPI-prediction.png)
 
 
