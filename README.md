@@ -39,7 +39,7 @@ Questi dati verranno utilizzati dal programma al fine del calcolo dell’EPI.<br
 <h2 id="regioni"> 3. Regioni</h2>
 Nel programma ogni regione è stata rappresentata mediante un'apposita classe (Regione.py), così definita:<br><br>
 <table>
-<tr><td>Attributiì</td></tr>
+<tr><td>Attributi</td></tr>
 <tr><td>name</td><td>Nome della regione</td></tr>
 <tr><td>epi</td><td>EPI medio calcolato per la settimana futura rispetto agli utimi dati registati nel dataset</td></tr>
 <tr><td>color</td><td>Colore ("white","yellow","orange","red") che indica il grado di criticità dei contagi</td></tr>
