@@ -71,7 +71,7 @@ Inoltre, il programma calcola anche l’**errore massimo e minimo** commesso dal
 I **grafici** con tutte queste informazioni vengono mostrate richiamando sull’oggetto Regione d’interesse, il metodo printGraphics.
 
 <h2 id="classificazione"> 5. Classificazione</h2>
-Il programma, raccogliendo dati sulle restrizioni associate ad ogni regione nelle ultime settimane, utilizza un **albero di decisione** per classificare le regioni nella settimana oggetto della predizione.<br><br>
+Il programma, raccogliendo dati sulle restrizioni associate ad ogni regione nelle ultime settimane, utilizza un  per classificare le regioni nella settimana oggetto della predizione.<br><br>
 
 >Un albero di decisione è un albero di classificatori (Decision Stump) dove ogni nodo interno è associato ad una particolare “domanda” su una caratteristica (feature). Da questo nodo dipartono tanti archi quanti sono i possibili valori che la caratteristica può assumere, fino a raggiungere le foglie che indicano la categoria associata alla decisione.
 
