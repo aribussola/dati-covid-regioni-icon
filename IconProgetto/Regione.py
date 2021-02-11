@@ -10,10 +10,10 @@ class Regione:
     # Initialize the class
     def __init__(self, name:str):
         self.name = name
-        self.rt = self.avgRT()
+        self.epi = self.avgEPI()
         self.color = ""
               
-    def avgRtByDate(self, dataCalcolo):
+    def avgEPIByDate(self, dataCalcolo):
         #ADDESTRAMENTO
         linkDataset = "https://raw.githubusercontent.com/aribussola/dati-covid-regioni-icon/main/Italia-dataSet-COVID/" + self.name +".csv"
         data = pd.read_csv(linkDataset)
@@ -39,7 +39,7 @@ class Regione:
         avgEPI = avgEPI / len(y)
         return avgEPI
     
-    def avgRT(self):
+    def avgEPI(self):
         #ADDESTRAMENTO
         linkDataset = "https://raw.githubusercontent.com/aribussola/dati-covid-regioni-icon/main/Italia-dataSet-COVID/" + self.name +".csv"
         data = pd.read_csv(linkDataset) 
@@ -58,7 +58,7 @@ class Regione:
         for i in range(1, len(y)+1):
             X.append([i])
            
-        #CALCOLO RT E CREAZIONE REGRESSORE
+        #CALCOLO EPI E CREAZIONE REGRESSORE
         start = len(tt)-14 #giorno inizio previsioni
     
         # Costruzione del modello di apprendimento
@@ -92,8 +92,6 @@ class Regione:
                 avgEPI = avgEPI + y_pred_linear[i]    
             
         avgEPI = avgEPI / 7
-    
-        print(avgEPI)
         return avgEPI     
 
     #Fare NomeRegione.printGraphics
@@ -134,7 +132,7 @@ class Regione:
         plt.show()
 
         #Secondo Grafico
-        #CALCOLO RT E CREAZIONE REGRESSORE
+        #CALCOLO EPI E CREAZIONE REGRESSORE
         start = len(tt)-14 #giorno inizio previsioni
     
         # Costruzione del modello di apprendimento

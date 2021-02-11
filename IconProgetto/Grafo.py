@@ -117,7 +117,7 @@ def heuristic (start, goal):
 def heuristicsVector (regione:Regione, lista):
     heuristics = {}
     for i in range (len(lista)) :
-            heuristics[lista[i].name] = heuristic (regione.rt, lista[i].rt)
+            heuristics[lista[i].name] = heuristic (regione.epi, lista[i].epi)
     return heuristics
 
 def realCost (start, goal):
