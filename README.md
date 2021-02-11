@@ -2,7 +2,7 @@
 ### <a href=#intro>1. INTRODUZIONE</a>
 ### <a href=#dati>2. DATI</a>
 ### <a href=#regioni>3. REGIONI</a>
-### <a href=#regioni>4. PREVISIONE</a>
+### <a href=#previsione>4. PREVISIONE</a>
 ### <a href=#regioni>5. CLASSIFICAZIONE</a>
 ### <a href=#regioni>6. RICERCA PERCORSO</a>
 
@@ -53,7 +53,7 @@ Nel programma ogni regione è stata rappresentata mediante un'apposita classe (R
 </table>
 
 
-<h2 id="regioni"> 4. Previsione</h2>
+<h2 id="previsione"> 4. Previsione</h2>
 L’applicazione, mediante l’accesso ad un data set, permette di effettuare delle predizioni sull’andamento del tasso di contagiosità (EPI) nella settimana seguente rispetto a quella dei dati di training.
 
 In particolare, la previsione viene effettuata per ogni singola regione, mediante l’apposito metodo avgEPI della classe Regione. Per effettuare la previsione, il programma si basa sull’utilizzo di un **regressore linare** che opera con le informazioni relative agli ultimi 14 giorni presenti nel dataset mostrato precedentemente nella sezione Dati.
