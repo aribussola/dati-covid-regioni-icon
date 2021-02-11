@@ -34,7 +34,7 @@ Ad esempio la tabella della regione Puglia è così strutturata:<br><br>
 Questi dati verranno utilizzati dal programma al fine del calcolo dell’EPI.<br><br>
 2.2) Per il task della classificazione invece, viene utilizzata la tabella seguente, la quale contiene **aggiornamenti settimanali sui colori (restrizioni)** assegnati alle regioni.<br><br>
 ![Help Example](/img/TabellaColori.PNG)<br><br>
-2.3) Dati inerenti la popolazione di ogni regione per effettuare con una maggiore precisione il task di classificazione<br>
+2.3) Dati inerenti la popolazione di ogni regione per effettuare con una maggiore precisione il task di classificazione<br><br>
 ![Help Example](/img/TabellaPopolazione.PNG)<br>
 
 <h2 id="regioni"> 3. Regioni</h2>
