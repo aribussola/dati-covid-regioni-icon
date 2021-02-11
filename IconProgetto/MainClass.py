@@ -159,6 +159,8 @@ def colorAssignment():
             if (regione[i]==lista[k].name):
                 lista[k].color=color
                 
+    return tree,clf
+                
 def getPopolazioni():
     linkDatasetPopolazione = "https://raw.githubusercontent.com/aribussola/dati-covid-regioni-icon/main/Italia-dataSet-COVID/TrainingSet(Popolazione).csv"
     dataPopolazione = pd.read_csv(linkDatasetPopolazione)
@@ -173,5 +175,8 @@ def printColors():
     colorAssignment()
     for i in range(len(lista)):
         print(lista[i].name,":" , lista[i].color)
-    
+   
+def printTree():
+    tree,clf = colorAssignment()
+    tree.plot_tree(clf)    
     
