@@ -37,7 +37,7 @@ Questi dati verranno utilizzati dal programma al fine del calcolo dell’EPI.<br
 
 
 <h2 id="regioni"> 3. Regioni</h2>
-Nel programma ogni regione è stata rappresentata mediante un'apposita classe (Regione.py), così definita:<br>
+Nel programma ogni regione è stata rappresentata mediante un'apposita classe (Regione.py), così definita:<br><br>
 <table>
 <tr><td>Attributiì</td></tr>
 <tr><td>name</td><td>Nome della regione</td></tr>
