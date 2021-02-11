@@ -3,8 +3,8 @@
 ### <a href=#dati>2. DATI</a>
 ### <a href=#regioni>3. REGIONI</a>
 ### <a href=#previsione>4. PREVISIONE</a>
-### <a href=#regioni>5. CLASSIFICAZIONE</a>
-### <a href=#regioni>6. RICERCA PERCORSO</a>
+### <a href=#classificazione>5. CLASSIFICAZIONE</a>
+### <a href=#percorso>6. RICERCA PERCORSO</a>
 
 <h2 id="intro"> 1. Introduzione </h2>
 Il programma affronta diverse problematiche legate alla pandemia SARS-CoV-2.
@@ -70,7 +70,19 @@ Inoltre, il programma calcola anche l’**errore massimo e minimo** commesso dal
 
 I **grafici** con tutte queste informazioni vengono mostrate richiamando sull’oggetto Regione d’interesse, il metodo printGraphics.
 
-<h2 id="regioni"> 5. Classificazione</h2>
+<h2 id="classificazione"> 5. Classificazione</h2>
+Il programma, raccogliendo dati sulle restrizioni associate ad ogni regione nelle ultime settimane, utilizza un **albero di decisione** per classificare le regioni nella settimana oggetto della predizione.<br>
 
-<h2 id="regioni"> 6. Ricerca Percorso</h2>
+>Un albero di decisione è un albero di classificatori (Decision Stump) dove ogni nodo interno è associato ad una particolare “domanda” su una caratteristica (feature). Da questo nodo dipartono tanti archi quanti sono i possibili valori che la caratteristica può assumere, fino a raggiungere le foglie che indicano la categoria associata alla decisione.
+
+In particolare utilizza come **training set** l'elenco delle regioni a cui sono associati:
+1. Come feature di **input**, di ogni regione, il **numero di abitanti** e l'**EPI medio** calcolato nella settimana d'interesse;<br>
+2. Come **target** il **colore** assegnato alla regione nella settimana d'interesse.<br>
+Il numero di abitanti di ogni regione viene rilevato dalla tabella "TrainingSet(Popolazione).csv", il colore per la settimana presa in considerazione viene rilevato dalla tabella "TrainingSet(Colori).csv", mentre l'EPI medio della settimana viene calcolato appositamente dalla funzione avgEPIByDate(self,dataCalcolo) descritta nella sezione 'Regione' che permette di calcolare il valore richiesto passando in input l'ultimo giorno della settimana.
+
+Allenandosi su questi dati, l'albero di decisione sarà in grado di assegnare alle regioni il colore corretto per la settimana oggetto della  previsione, basandosi sulle stesse feature di input "popolazione" ed "EPI" (predetto dalla funzione di previsione).
+
+Il classificatore potrà essere mandato in esecuzione dall'utente mediante la funzione "printColors()", la quale stamperà a video i colori assegnati ad ogni regione nel seguente modo: 
+
+<h2 id="percorso"> 6. Ricerca Percorso</h2>
  
