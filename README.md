@@ -78,7 +78,7 @@ Il programma, raccogliendo dati sulle restrizioni associate ad ogni regione nell
 L'albero di decisione utilizzato dalla funzione di classificazione potrà essere stampato a video dall'utente richiamando la funzione "printTree()".<br><br>
 ![Help Example](/img/decisionTree.png)
 
-In particolare utilizza come **training set** l'elenco delle regioni a cui sono associati:
+In particolare utilizza come **training set** l'elenco delle regioni a cui sono associati: 
 1. Come feature di **input**, di ogni regione, il **numero di abitanti** e l'**EPI medio** calcolato nella settimana d'interesse;<br>
 2. Come **target** il **colore** assegnato alla regione nella settimana d'interesse.<br>
 Il numero di abitanti di ogni regione viene rilevato dalla tabella "TrainingSet(Popolazione).csv", il colore per la settimana presa in considerazione viene rilevato dalla tabella "TrainingSet(Colori).csv", mentre l'EPI medio della settimana viene calcolato appositamente dalla funzione avgEPIByDate(self,dataCalcolo) descritta nella sezione 'Regione' che permette di calcolare il valore richiesto passando in input l'ultimo giorno della settimana.
