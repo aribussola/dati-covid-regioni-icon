@@ -83,7 +83,9 @@ Il numero di abitanti di ogni regione viene rilevato dalla tabella "TrainingSet(
 Allenandosi su questi dati, l'albero di decisione sarà in grado di assegnare alle regioni il colore corretto per la settimana oggetto della  previsione, basandosi sulle stesse feature di input "popolazione" ed "EPI" (predetto dalla funzione di previsione).
 
 Il classificatore potrà essere mandato in esecuzione dall'utente mediante la funzione "printColors()", la quale stamperà a video i colori assegnati ad ogni regione nel seguente modo: <br><br>
-![Help Example](/img/printColors.PNG)
+![Help Example](/img/printColors.PNG)<br><br>
+L'albero di decisione utilizzato dalla funzione di classificazione potrà essere stampato a video dall'utente richiamando la funzione "printTree()".<br><br>
+![Help Example](/img/decisionTree.png)
 
 <h2 id="percorso"> 6. Ricerca Percorso</h2>
  
