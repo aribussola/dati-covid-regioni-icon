@@ -122,9 +122,11 @@ Altrimenti l'output sarà 'None'.<br><br>
 
 <h2 id="KB"> 7. Base di conoscenza</h2>
 Con l'obiettivo di fornire un supporto all'interpretazione dei passi effettuati dalla ricerca, al programma è stata aggiunta una base di conoscenza.<br>
+
 >Una base di conoscenza è un database in cui sono archiviate e organizzate le conoscenze in un particolare ambito o generali. La base di conoscenza è spesso indicata anche con il termine inglese knowledge base o con l'acronimo KB.<br>
 Utilizzando la base di consocenza è possibile ricavare informazioni aggiuntive inerenti le condizioni di attraversamento di due regioni.
 In particolare, le query effettuabili sono:<br>
+
 1. askColor("Regione","Colore"), permette di interrogare la base di consocenza per stabilire se alla "Regione" è assegnato un determinato 
 "Colore";<br>
 ![Help Example](/img/askColorNO.PNG)<br><br>
