@@ -125,13 +125,13 @@ Con l'obiettivo di fornire un supporto all'interpretazione dei passi effettuati 
 
 >Una base di conoscenza è un database in cui sono archiviate e organizzate le conoscenze in un particolare ambito o generali. La base di conoscenza è spesso indicata anche con il termine inglese knowledge base o con l'acronimo KB.<br>
 
-Utilizzando la base di conoscenza è possibile ricavare informazioni aggiuntive inerenti il colore delle regioni e le condizioni di attraversamento tra due regioni adiacenti, mediante l'utilizzo delle seguenti clausole:
-**regione_colore** : per ogni regione ci sarà un fatto che indica il colore assegnatole con la classificazione
-**askColor(regione,colore) <=> regione_colore** : ci permette di sapere se la regione ha il colore richiesto
-**askPassaggio(regione1,regione2) <=> adiacenza(regione1,regione2) and notRed(regione1) and notRed(regione2)** : ci permette di sapere se è possibile effettuare il passaggio tra due regioni adiacenti, ovvero solo se, oltre ad essere adiacenti, entrambe sono di un colore diverso dal rosso
-**notRed(regione) <=> regione_yellow or regione_orange or regione_white** : ci permette di sapere se alla regione non è stato assegnato il colore rosso
+Utilizzando la base di conoscenza è possibile ricavare informazioni aggiuntive inerenti il colore delle regioni e le condizioni di attraversamento tra due regioni adiacenti, mediante l'utilizzo delle seguenti clausole:<br>
+**regione_colore** : per ogni regione ci sarà un fatto che indica il colore assegnatole con la classificazione<br>
+**askColor(regione,colore) <=> regione_colore** : ci permette di sapere se la regione ha il colore richiesto<br>
+**askPassaggio(regione1,regione2) <=> adiacenza(regione1,regione2) and notRed(regione1) and notRed(regione2)** : ci permette di sapere se è possibile effettuare il passaggio tra due regioni adiacenti, ovvero solo se, oltre ad essere adiacenti, entrambe sono di un colore diverso dal rosso<br>
+**notRed(regione) <=> regione_yellow or regione_orange or regione_white** : ci permette di sapere se alla regione non è stato assegnato il colore rosso<br>
 
-Esempi di utilizzo della base di conoscenza:
+Esempi di utilizzo della base di conoscenza:<br>
 **1. askColor("Regione","Colore")**<br><br>
 ![Help Example](/img/askColorNO.PNG)<br><br>
 ![Help Example](/img/askColorYES.PNG)<br><br>
