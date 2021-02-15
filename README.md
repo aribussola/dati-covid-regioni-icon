@@ -127,8 +127,10 @@ Utilizzando la base di consocenza è possibile ricavare informazioni aggiuntive 
 In particolare, le query effettuabili sono:<br>
 1. askColor("Regione","Colore"), permette di interrogare la base di consocenza per stabilire se alla "Regione" è assegnato un determinato 
 "Colore";<br>
-![Help Example](img/askColorNO.PNG)<br><br>
-2. askPassaggio("Regione1","Regione2"), permette di interrogare la base di consocenza per stabilire se la "Regione1" e la "Regione2" sono adiacenti e prive di restrizioni per poter effettuare lo spostamento.<br>
+![Help Example](/img/askColorNO.PNG)<br><br>
 ![Help Example](/img/askColorYES.PNG)<br><br>
+2. askPassaggio("Regione1","Regione2"), permette di interrogare la base di consocenza per stabilire se la "Regione1" e la "Regione2" sono adiacenti e prive di restrizioni per poter effettuare lo spostamento.<br>
+![Help Example](/img/askPassaggioNO.PNG)<br><br>
+![Help Example](/img/askPassaggioYES.PNG)<br><br>
 Per ogni query, viene fornita una risposta: YES / NO in base alla veridicità della clausula che si vuole dimostrare.
 In seguito ad una risposta, è possibile utilizzare l'operatore HOW per chiedere di spiegare come sia stata provata la risposta.
