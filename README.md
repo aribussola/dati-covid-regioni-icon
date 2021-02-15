@@ -28,7 +28,7 @@ Infine, basandosi sui dati calcolati, una feature permette di ricercare il perco
 <h2 id="dati"> 2. Dati </h2>
 
 Il programma utilizza tre differenti tipologie di data set disponibili tramite file .csv presenti su repository github:<br><br>
-2.1) **Dati sulle regioni**. In particolare un documento .csv per ogni regione in cui vengono indicati, suddivisi per giorni, i dati relativi ai casi totali per regione e numero di tamponi effettuati.<br>
+2.1) **Dati sulle regioni**. In particolare, un documento .csv per ogni regione in cui vengono indicati, suddivisi per giorni, i dati relativi ai casi totali per regione e numero di tamponi effettuati.<br>
 Ad esempio la tabella della regione Puglia è così strutturata:<br><br>
 ![Help Example](/img/Immagine.PNG)<br><br>
 Questi dati verranno utilizzati dal programma al fine del calcolo dell’EPI.<br><br>
@@ -48,17 +48,17 @@ Nel programma ogni regione è stata rappresentata mediante un'apposita classe (R
 <table>
 <tr><td>Metodi</td></tr>
 <tr><td>avgEPIByDate (self, dataCalcolo)</td><td>Metodo per il calcolo dell'EPI medio, a partire da una settimana prima fino ad una data passata in input</td></tr>
-<tr><td>avgEPI (self)</td><td>Metodo per il calcolo dell'EPI medio calcolato per la settimana futura rispetto agli utimi dati registati nel dataset</td></tr>
-<tr><td>printGraphics(self)</td><td>Metodo per la visualizzazione dei grafici inenerenti l'andamento dei contagi registrati nelle ultime due settimane (prima della previsione) e la curva epidemiologica della previsione (con relativi margini di errore)</td></tr>
+<tr><td>avgEPI (self)</td><td>Metodo per il calcolo dell'EPI medio calcolato per la settimana futura rispetto agli ultimi dati registrati nel dataset</td></tr>
+<tr><td>printGraphics(self)</td><td>Metodo per la visualizzazione dei grafici inerenti l'andamento dei contagi registrati nelle ultime due settimane (prima della previsione) e la curva epidemiologica della previsione (con relativi margini di errore)</td></tr>
 </table>
 
 
 <h2 id="previsione"> 4. Previsione</h2>
 L’applicazione, mediante l’accesso ad un data set, permette di effettuare delle predizioni sull’andamento del tasso di contagiosità (EPI) nella settimana seguente rispetto a quella dei dati di training.
 
-In particolare, la previsione viene effettuata per ogni singola regione, mediante l’apposito metodo avgEPI della classe Regione. Per effettuare la previsione, il programma si basa sull’utilizzo di un **regressore linare** che opera con le informazioni relative agli ultimi 14 giorni presenti nel dataset mostrato precedentemente nella sezione Dati.
+In particolare, la previsione viene effettuata per ogni singola regione, mediante l’apposito metodo avgEPI della classe Regione. Per effettuare la previsione, il programma si basa sull’utilizzo di un **regressore lineare** che opera con le informazioni relative agli ultimi 14 giorni presenti nel dataset mostrato precedentemente nella sezione Dati.
 > La **regressione lineare** è una tecnica di modellazione statistica utilizzata per descrivere una varabile di risposta continua in funzione di una o più variabili (predittori). Può contribuire a comprendere e a prevedere il comportamento di sistemi complessi, nonché ad analizzare dati.
-Le regressioni lineari hanno delle proprietà che le rendono particolarmente utili per effetuare **predizioni o previsioni** (utilizzo di un modello di regressione per creare un modello di previsione per un set di dati specifico; dal modello, è possibile usare la regressione per prevedere i valori di risposta quando sono noti solo i predittori).
+Le regressioni lineari hanno delle proprietà che le rendono particolarmente utili per effettuare **predizioni o previsioni** (utilizzo di un modello di regressione per creare un modello di previsione per un set di dati specifico; dal modello, è possibile usare la regressione per prevedere i valori di risposta quando sono noti solo i predittori).
 
 ![Help Example](/img/EPI-all.png)
 
@@ -110,7 +110,7 @@ Quindi, ad esempio, per calcolare il costo del percorso dalla regione Puglia all
 In questo modo verranno scelte come prossimo step della ricerca, le regioni che avranno il minimo valore della somma tra costo effettivo e valore della funzione euristica.
 L’algoritmo di ricerca utilizzato per tenere in considerazione tutto ciò è A*.
 
->A* è un algoritmo di ricerca e ottimizzazione basato su grafi. Viene frequentemente impiegato nell’intelligenza artificiale perché in grado di gestire grafi ampi e indeterminati. In generale, A* può risolvere efficacemente i problemi che soddisfano i requisiti:<br> - La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi;<br> - Il nodo iniziale e il nodo finale devono essere noti;<br> - Deve essere noto un algoritmo euristico che stima il costo del percorso tra un nodo qualsiasi e la soluzione;<br> - Deve essere sempre noto il costo che separa due nodi adiacenti. (Nella maggioranza dei problemi tale valore è sempre unitario). <br> <br> A* rientra nella categoria degli algoritmi di ricerca best-first. Esso infatti esamina, passo dopo passo, i nodi che hanno il punteggio migliore. Esso tuttavia non è *greedy* in quanto il punteggio non è determinato esclusivamente dall’euristica.
+>A* è un algoritmo di ricerca e ottimizzazione basato su grafi. Viene frequentemente impiegato nell’intelligenza artificiale perché in grado di gestire grafi ampi e indeterminati. In generale, A* può risolvere efficacemente i problemi che soddisfano i requisiti:<br> - La soluzione è determinata da cambiamenti sequenziali di stato rappresentabili con grafi;<br> - Il nodo iniziale e il nodo finale devono essere noti;<br> - Deve essere noto un algoritmo euristico che stima il costo del percorso tra un nodo qualsiasi e la soluzione;<br> - Deve essere sempre noto il costo che separa due nodi adiacenti. (Nella maggioranza dei problemi tale valore è sempre unitario). <br> <br> A* rientra nella categoria degli algoritmi di ricerca best-first. Esso infatti esamina, passo dopo passo, i nodi che hanno il punteggio migliore. Esso tuttavia non è *greedy* in quanto il punteggio non è determinato esclusivamente dall’euristica.
 
 L'utente può ricercare un percorso tra regioni mediante la funzione "findPath('NomeRegione1','NomeRegione2')", inserendo il nome delle regioni con le apposite diciture (ValleAosta, Piemonte, Lombardia, Liguria, EmiliaRomagna, Veneto, TrentinoAltoAdige, FriuliVeneziaGiulia, Toscana, Marche, Umbria, Lazio, Abruzzo, Campania, Molise, Puglia, Basilicata, Calabria, Sardegna, Sicilia).
 
