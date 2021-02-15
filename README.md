@@ -121,17 +121,17 @@ Altrimenti l'output sarà 'None'.<br><br>
 ![Help Example](/img/findPathNone.PNG)
 
 <h2 id="KB"> 7. Base di conoscenza</h2>
-Con l'obiettivo di fornire un supporto all'interpretazione dei passi effettuati dalla ricerca, al programma è stata aggiunta una base di conoscenza.<br>
+Con l'obiettivo di fornire un supporto all'interpretazione dei passi effettuati dalla ricerca, al programma è stata aggiunta una base di conoscenza.<br><br>
 
 >Una base di conoscenza è un database in cui sono archiviate e organizzate le conoscenze in un particolare ambito o generali. La base di conoscenza è spesso indicata anche con il termine inglese knowledge base o con l'acronimo KB.<br>
 Utilizzando la base di consocenza è possibile ricavare informazioni aggiuntive inerenti le condizioni di attraversamento di due regioni.
 In particolare, le query effettuabili sono:<br>
 
 1. askColor("Regione","Colore"), permette di interrogare la base di consocenza per stabilire se alla "Regione" è assegnato un determinato 
-"Colore";<br>
+"Colore";<br><br>
 ![Help Example](/img/askColorNO.PNG)<br><br>
 ![Help Example](/img/askColorYES.PNG)<br><br>
-2. askPassaggio("Regione1","Regione2"), permette di interrogare la base di consocenza per stabilire se la "Regione1" e la "Regione2" sono adiacenti e prive di restrizioni per poter effettuare lo spostamento.<br>
+2. askPassaggio("Regione1","Regione2"), permette di interrogare la base di consocenza per stabilire se la "Regione1" e la "Regione2" sono adiacenti e prive di restrizioni per poter effettuare lo spostamento.<br><br>
 ![Help Example](/img/askPassaggioNO.PNG)<br><br>
 ![Help Example](/img/askPassaggioYES.PNG)<br><br>
 Per ogni query, viene fornita una risposta: YES / NO in base alla veridicità della clausula che si vuole dimostrare.
