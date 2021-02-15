@@ -43,7 +43,7 @@ Nel programma ogni regione è stata rappresentata mediante un'apposita classe (R
 <table>
 <tr><td>Attributi</td></tr>
 <tr><td>name</td><td>Nome della regione</td></tr>
-<tr><td>epi</td><td>EPI medio calcolato per la settimana futura rispetto agli utimi dati registati nel dataset</td></tr>
+<tr><td>epi</td><td>EPI medio calcolato per la settimana futura rispetto agli ultimi dati registrati nel dataset</td></tr>
 <tr><td>color</td><td>Colore ("white","yellow","orange","red") che indica il grado di criticità dei contagi</td></tr>
 </table>
 <table>
@@ -121,17 +121,21 @@ Altrimenti l'output sarà 'None'.<br><br>
 ![Help Example](/img/findPathNone.PNG)
 
 <h2 id="KB"> 7. Base di conoscenza</h2>
-Con l'obiettivo di fornire un supporto all'interpretazione dei passi effettuati dalla ricerca, al programma è stata aggiunta una base di conoscenza.<br><br>
+Con l'obiettivo di fornire un supporto all'interpretazione dei passi effettuati dalla ricerca, al programma è stata aggiunta una base di conoscenza con assunzione di conoscenza completa.<br><br>
 
 >Una base di conoscenza è un database in cui sono archiviate e organizzate le conoscenze in un particolare ambito o generali. La base di conoscenza è spesso indicata anche con il termine inglese knowledge base o con l'acronimo KB.<br>
-Utilizzando la base di consocenza è possibile ricavare informazioni aggiuntive inerenti le condizioni di attraversamento di due regioni.
-In particolare, le query effettuabili sono:<br>
 
-1. askColor("Regione","Colore"), permette di interrogare la base di consocenza per stabilire se alla "Regione" è assegnato un determinato 
-"Colore";<br><br>
+Utilizzando la base di conoscenza è possibile ricavare informazioni aggiuntive inerenti il colore delle regioni e le condizioni di attraversamento tra due regioni adiacenti, mediante l'utilizzo delle seguenti clausole:
+**regione_colore** : per ogni regione ci sarà un fatto che indica il colore assegnatole con la classificazione
+**askColor(regione,colore) <=> regione_colore** : ci permette di sapere se la regione ha il colore richiesto
+**askPassaggio(regione1,regione2) <=> adiacenza(regione1,regione2) and notRed(regione1) and notRed(regione2)** : ci permette di sapere se è possibile effettuare il passaggio tra due regioni adiacenti, ovvero solo se, oltre ad essere adiacenti, entrambe sono di un colore diverso dal rosso
+**notRed(regione) <=> regione_yellow or regione_orange or regione_white** : ci permette di sapere se alla regione non è stato assegnato il colore rosso
+
+Esempi di utilizzo della base di conoscenza:
+**1. askColor("Regione","Colore")**<br><br>
 ![Help Example](/img/askColorNO.PNG)<br><br>
 ![Help Example](/img/askColorYES.PNG)<br><br>
-2. askPassaggio("Regione1","Regione2"), permette di interrogare la base di consocenza per stabilire se la "Regione1" e la "Regione2" sono adiacenti e prive di restrizioni per poter effettuare lo spostamento.<br><br>
+**2. askPassaggio("Regione1","Regione2")**<br><br>
 ![Help Example](/img/askPassaggioNO.PNG)<br><br>
 ![Help Example](/img/askPassaggioYES.PNG)<br><br>
 Per ogni query, viene fornita una risposta: YES / NO in base alla veridicità della clausula che si vuole dimostrare.
